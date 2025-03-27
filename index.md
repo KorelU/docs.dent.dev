@@ -26,20 +26,7 @@ Looking ahead, the upcoming ["DENT 4.0" release](https://github.com/dentproject/
 
 ## Members
 
-### Premiere Members
-
-- [Amazon](https://www.amazon.com/)
-- [Edge-Core Networks](https://www.edge-core.com/)
-
-### General Members
-
-- [Keysight Technologies](https://www.keysight.com/)
-- [BISDN](https://bisdn.de/)
-- [Bootlin](https://bootlin.com/)
-- [Micas Networks](https://micasnetworks.com/)
-- [PLVision](https://plvision.eu/)
-- [Satura](https://satura.co/)
-- [Wistron](https://www.wistron.com/)
+For a full list of members, please visit the [DENT home page](https://dent.dev/).
 
 ## Specifications
 
