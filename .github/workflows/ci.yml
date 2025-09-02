@@ -76,14 +76,6 @@ jobs:
       - name: Sleep 10 seconds to avoid race conditions
         run: sleep 10
 
-      - name: Download GitHub Pages artifact
-        uses: actions/download-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Debug List downloaded files
-        run: ls -lR _site
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
