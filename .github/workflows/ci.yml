@@ -73,8 +73,8 @@ jobs:
             https://api.github.com/repos/$REPO/actions/runs/$RUN_ID/artifacts \
             | jq '.'
 
-      - name: Sleep 10 seconds to avoid race conditions
-        run: sleep 10
+      - name: Sleep 30 seconds to avoid race conditions
+        run: sleep 30
 
       - name: Deploy to GitHub Pages
         id: deployment
