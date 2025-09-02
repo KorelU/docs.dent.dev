@@ -52,6 +52,6 @@ jobs:
         uses: actions/deploy-pages@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-        environment:
-          name: github-pages
-          url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
