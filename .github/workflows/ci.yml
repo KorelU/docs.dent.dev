@@ -48,23 +48,15 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
-      - name: Show GitHub run ID
+      - name: Wait for artifact propagation
+        run: sleep 10
+
+      - name: Debug environment protection (optional)
         run: |
-          echo "Current run ID: $GITHUB_RUN_ID"
-      
-      - name: List artifacts for this run
-        run: |
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/actions/runs/${GITHUB_RUN_ID}/artifacts \
-            | jq '.'  # pretty print JSON output
-        env:
-          GITHUB_RUN_ID: ${{ github.run_id }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+          echo "Environment name: ${{ job.environment.name }}"
+          echo "Repository: ${{ github.repository }}"
+          # You can add more debug info here if needed
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
