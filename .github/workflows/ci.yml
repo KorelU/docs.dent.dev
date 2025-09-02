@@ -46,17 +46,13 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment: github-pages   # <-- Properly set here at job level
     steps:
       - name: Wait for artifact propagation
         run: sleep 10
 
-      - name: Debug environment protection (optional)
-        run: |
-          echo "Environment name: ${{ job.environment.name }}"
-          echo "Repository: ${{ github.repository }}"
-          # You can add more debug info here if needed
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
